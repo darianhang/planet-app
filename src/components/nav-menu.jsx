@@ -14,6 +14,7 @@ const MenuContainer = styled.div`
   z-index: 1;
   background-color: #070724;
   width: 100%;
+  padding-top: 115px;
   animation-name: ${slideRight};
  animation-duration: 0.5s;
  animation-iteration-count: 1;

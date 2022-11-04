@@ -5,11 +5,16 @@ import { Link } from "react-router-dom"
 import { SpaceData } from "../data/data"
 
 const SectionNavWRapper = styled.div`
+  position: fixed;
+  top: 71px;
+  width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     height: 43px;
+    z-index: 1;
+    background-color: #070724;
 `
 
 const SectionStyles = styled.div`

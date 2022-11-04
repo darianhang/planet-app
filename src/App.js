@@ -7,6 +7,7 @@ import { SpaceData } from "./data/data"
 import SectionNavBar from "./components/section-nav"
 import Planet from "./components/planet"
 import NavMenu from "./components/nav-menu"
+import Stats from "./components/planet-stats"
 
 const AppWrapper = styled.div`
   background-image: url("../assets/background-stars.svg");
@@ -26,6 +27,7 @@ function App() {
   }
 
   const BodyWrapper = styled.div`
+  padding-top: 115px;
   -webkit-filter: ${ openMenu ? "blur(5px)" : ""};
   -moz-filter: ${ openMenu ? "blur(5px)" : ""};
   -o-filter: ${ openMenu ? "blur(5px)" : ""};
@@ -45,6 +47,7 @@ function App() {
             <BodyWrapper>
               <Planet img={data.images.planet}/>
               <InfoBody source={data.overview.source} name={data.name} body={selected == 1 ? data.overview.content : selected == 2 ? data.structure.content : selected == 3 ? data.geology.content : ""}/>
+              <Stats/>
             </BodyWrapper>} />
           )
         })}

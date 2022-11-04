@@ -37,6 +37,7 @@ align-items: center;
   line-height: 22px;
   text-align: center;
   width: 80%;
+  margin-bottom: 24px;
 `
 
 const SourceIcon = styled.img`

@@ -5,7 +5,9 @@ import { Link } from "react-router-dom"
 import { SpaceData } from "../data/data"
 
 const NavContainer = styled.div`
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: #070724;
   display: flex;
   flex-direction: row;
@@ -14,7 +16,7 @@ const NavContainer = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   height: 50px;
   padding: 10px 25px 10px 25px;
-  z-index: 1000;
+  z-index: 2;
 `
 
 const NavTitle = styled.h1`
@@ -27,6 +29,21 @@ const NavTitle = styled.h1`
   padding-bottom: 5px;
 `
 
+const Ham = styled.img`
+position: fixed;
+right: 25px;
+width: 100%;
+height: 17px;
+width: 24px;
+
+opacity: ${props => props.hamStatus ? "30%" : ""};
+
+@media only screen and (min-width: 460px) {
+  display: none;
+}
+
+`
+
 const NavLinks = styled.div`
 
 @media only screen and (max-width: 460px) {
@@ -37,21 +54,10 @@ const NavLinks = styled.div`
 function NavBar(props) {
   console.log(SpaceData[0].overview.source)
 
-  const Ham = styled.img`
-  height: 17px;
-  width: 24px;
-
-  opacity: ${props.hamStatus ? "30%" : ""};
-
-  @media only screen and (min-width: 460px) {
-    display: none;
-}
-
-`
   return (
     <NavContainer>
       <NavTitle>THE PLANETS</NavTitle>
-      <Ham onClick={props.toggleOpen} src="../assets/icon-hamburger.svg"></Ham>
+      <Ham hamStatus={props.hamStatus} onClick={props.toggleOpen} src="../assets/icon-hamburger.svg"></Ham>
       <NavLinks>
         {SpaceData.map((data) => {
           return (
