@@ -40,7 +40,7 @@ function App() {
             <Route path={data.name} element={
             <BodyWrapper>
               <Planet img={data.images.planet}/>
-              <InfoBody name={data.name} body={selected == 1 ? data.overview.content : selected == 2 ? data.structure.content : selected == 3 ? data.geology.content : ""}/>
+              <InfoBody source={data.overview.source} name={data.name} body={selected == 1 ? data.overview.content : selected == 2 ? data.structure.content : selected == 3 ? data.geology.content : ""}/>
             </BodyWrapper>} />
           )
         })}

@@ -26,13 +26,25 @@ const Body = styled.p`
 `
 
 const Source = styled.p`
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
   font-family: 'League Spartan', sans-serif;
   color: #fff;
   font-size: 11px;
-  font-weight: 200;
+  font-weight: 500;
   line-height: 22px;
   text-align: center;
   width: 80%;
+  text-decoration: none;
+  color: #fff;
+`
+
+const SourceIcon = styled.img`
+  height: 10px;
+  width: 10px;
+  margin-left: 3px;
 `
 
 function InfoBody(props) {
@@ -40,7 +52,7 @@ function InfoBody(props) {
     <InfoWRapper>
       <Title>{props.name}</Title>
       <Body>{props.body}</Body>
-      <Source>Source : Wikipedia</Source>
+      <Source>Source :&nbsp;<a href={props.source}>Wikipedia<SourceIcon src="../assets/icon-source.svg"></SourceIcon></a></Source>
     </InfoWRapper>
   );
 }

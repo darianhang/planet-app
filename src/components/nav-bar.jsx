@@ -35,7 +35,7 @@ const NavLinks = styled.div`
 `
 
 function NavBar(props) {
-  console.log(SpaceData[0])
+  console.log(SpaceData[0].overview.source)
 
   const Ham = styled.img`
   height: 17px;
