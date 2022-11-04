@@ -21,19 +21,27 @@ function App() {
     setOpenMenu(prev => !prev)
   }
 
+  const BodyWrapper = styled.div`
+  -webkit-filter: ${ openMenu ? "blur(5px)" : ""};
+  -moz-filter: ${ openMenu ? "blur(5px)" : ""};
+  -o-filter: ${ openMenu ? "blur(5px)" : ""};
+  -ms-filter: ${ openMenu ? "blur(5px)" : ""};
+  filter: ${ openMenu ? "blur(5px)" : ""};
+`
+
   return (
     <AppWrapper className="App">
-      <NavBar toggleOpen={ToggleMenu}/>
+      <NavBar toggleOpen={ToggleMenu} hamStatus={openMenu}/>
       <NavMenu toggleOpen={openMenu} setOpen={ToggleMenu}/>
       <SectionNavBar selected={selected} setSelected={setSelected}/>
       <Routes>
         {SpaceData.map((data) => {
           return (
             <Route path={data.name} element={
-            <div>
+            <BodyWrapper>
               <Planet img={data.images.planet}/>
               <InfoBody name={data.name} body={selected == 1 ? data.overview.content : selected == 2 ? data.structure.content : selected == 3 ? data.geology.content : ""}/>
-            </div>} />
+            </BodyWrapper>} />
           )
         })}
         <Route path="/" element={<Navigate to="/Mercury"/>}></Route>

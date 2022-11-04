@@ -34,18 +34,20 @@ const NavLinks = styled.div`
 }
 `
 
-const Ham = styled.img`
+function NavBar(props) {
+  console.log(SpaceData[0])
+
+  const Ham = styled.img`
   height: 17px;
   width: 24px;
+
+  opacity: ${props.hamStatus ? "30%" : ""};
 
   @media only screen and (min-width: 460px) {
     display: none;
 }
 
 `
-
-function NavBar(props) {
-  console.log(SpaceData[0])
   return (
     <NavContainer>
       <NavTitle>THE PLANETS</NavTitle>
