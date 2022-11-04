@@ -10,7 +10,7 @@ const StatsContainer = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.1);
   width: 80%;
   height: 50px;
-  margin: 5px;
+  margin: 5px 5px 25px 5px;
   padding: 0 20px 0 20px;
 `
 
