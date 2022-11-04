@@ -21,6 +21,10 @@ function App() {
     setOpenMenu(prev => !prev)
   }
 
+  function resetSelect() {
+    setSelected(1)
+  }
+
   const BodyWrapper = styled.div`
   -webkit-filter: ${ openMenu ? "blur(5px)" : ""};
   -moz-filter: ${ openMenu ? "blur(5px)" : ""};
@@ -32,7 +36,7 @@ function App() {
   return (
     <AppWrapper className="App">
       <NavBar toggleOpen={ToggleMenu} hamStatus={openMenu}/>
-      <NavMenu toggleOpen={openMenu} setOpen={ToggleMenu}/>
+      <NavMenu toggleOpen={openMenu} setOpen={ToggleMenu} resetSelected={resetSelect}/>
       <SectionNavBar selected={selected} setSelected={setSelected}/>
       <Routes>
         {SpaceData.map((data) => {

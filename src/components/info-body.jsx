@@ -45,7 +45,7 @@ const SourceIcon = styled.img`
   margin-left: 3px;
 `
 
-const Link = styled.a`
+const Anc = styled.a`
   text-decoration: none;
   color: #fff;
 ` 
@@ -55,7 +55,7 @@ function InfoBody(props) {
     <InfoWRapper>
       <Title>{props.name}</Title>
       <Body>{props.body}</Body>
-      <Source>Source :&nbsp;<a href={props.source}>Wikipedia<SourceIcon src="../assets/icon-source.svg"></SourceIcon></a></Source>
+      <Source>Source :&nbsp;<Anc href={props.source}>Wikipedia<SourceIcon src="../assets/icon-source.svg"></SourceIcon></Anc></Source>
     </InfoWRapper>
   );
 }

@@ -57,13 +57,18 @@ const LinkContainer = styled.div`
 
 function NavMenu(props) {
   console.log(SpaceData[0])
+
+  function handleClick(){
+    props.setOpen()
+    props.resetSelected()
+  }
   return (
     <MenuContainer className="poop" style={props.toggleOpen ? { display: "block" } : { display: "none" }}>
       <NavLinks>
         {SpaceData.map((data, i) => {
           return (
             <LinkContainer style={{ borderBottom: i == SpaceData.length - 1 ? "none" : "" }}>
-              <StyledLink onClick={props.setOpen} to={data.name}>
+              <StyledLink onClick={handleClick} to={data.name}>
                 <Icon style={{ backgroundColor: data.color }}></Icon>
                 {data.name}</StyledLink>
             </LinkContainer>
