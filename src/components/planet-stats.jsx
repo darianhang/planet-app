@@ -27,13 +27,13 @@ const StatTitle = styled.h2`
   font-size: 10px;
   opacity: 50%;
   color: #fff;
+  padding-top: 2px;
 `
 
 const Stat = styled.h3`
   text-transform: uppercase;
   color: #fff;
   padding-bottom: 5px;
-
 `
 
 function Stats(props) {
