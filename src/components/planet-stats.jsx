@@ -33,7 +33,7 @@ const StatTitle = styled.h2`
 const Stat = styled.h3`
   text-transform: uppercase;
   color: #fff;
-  padding-bottom: 5px;
+  padding-bottom: 3px;
 `
 
 function Stats(props) {
