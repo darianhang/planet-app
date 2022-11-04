@@ -27,7 +27,7 @@ const StatTitle = styled.h2`
   font-size: 10px;
   opacity: 50%;
   color: #fff;
-  padding-bottom: 3px;
+  padding-bottom: 1px;
 `
 
 const Stat = styled.h3`
