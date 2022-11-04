@@ -37,8 +37,6 @@ align-items: center;
   line-height: 22px;
   text-align: center;
   width: 80%;
-  text-decoration: none;
-  color: #fff;
 `
 
 const SourceIcon = styled.img`
@@ -46,6 +44,11 @@ const SourceIcon = styled.img`
   width: 10px;
   margin-left: 3px;
 `
+
+const Link = styled.a`
+  text-decoration: none;
+  color: #fff;
+` 
 
 function InfoBody(props) {
   return (
