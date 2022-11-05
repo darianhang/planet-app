@@ -6,12 +6,16 @@ import { SpaceData } from "../data/data"
 
 const OverlayContainer = styled.div`
     position: absolute;
-    left: 25px;
-    top: 175px;
+    width: 100vw;
     z-index: 1;
 `
 
 const OverlayImg = styled.img`
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
     transform: scale(0.4)
 `
 
