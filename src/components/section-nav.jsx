@@ -13,7 +13,7 @@ const SectionNavWRapper = styled.div`
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     height: 43px;
-    z-index: 1;
+    z-index: 2;
     background-color: #070724;
 `
 

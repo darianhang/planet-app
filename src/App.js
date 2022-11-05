@@ -8,6 +8,7 @@ import SectionNavBar from "./components/section-nav"
 import Planet from "./components/planet"
 import NavMenu from "./components/nav-menu"
 import Stats from "./components/planet-stats"
+import SurfaceOverlay from "./components/surface-overlay"
 
 const AppWrapper = styled.div`
   background-image: url("../assets/background-stars.svg");
@@ -45,9 +46,10 @@ function App() {
           return (
             <Route path={data.name} element={
             <BodyWrapper>
-              <Planet img={data.images.planet}/>
+              <SurfaceOverlay img={selected == 3 ? data.images.geology : ""}/>
+              <Planet img={selected == 2 ? data.images.internal : data.images.planet }/>
               <InfoBody source={data.overview.source} name={data.name} body={selected == 1 ? data.overview.content : selected == 2 ? data.structure.content : selected == 3 ? data.geology.content : ""}/>
-              <Stats/>
+              <Stats rotation={data.rotation} revolution={data.revolution} radius={data.radius} average={data.temperature}/>
             </BodyWrapper>} />
           )
         })}

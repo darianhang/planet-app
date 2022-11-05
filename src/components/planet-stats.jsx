@@ -33,7 +33,7 @@ const StatTitle = styled.h2`
 const Stat = styled.h3`
   text-transform: uppercase;
   color: #fff;
-  padding-bottom: 3px;
+  padding-bottom: 2.5px;
 `
 
 function Stats(props) {
@@ -42,19 +42,19 @@ function Stats(props) {
     <StatWrapper>
       <StatsContainer>
         <StatTitle>Rotation Time</StatTitle>
-        <Stat>56.7 Days</Stat>
+        <Stat>{props.rotation}</Stat>
       </StatsContainer>
       <StatsContainer>
         <StatTitle>Revolution Time</StatTitle>
-        <Stat></Stat>
+        <Stat>{props.revolution}</Stat>
       </StatsContainer>
       <StatsContainer>
         <StatTitle>Radius</StatTitle>
-        <Stat></Stat>
+        <Stat>{props.radius}</Stat>
       </StatsContainer>
       <StatsContainer>
         <StatTitle>Average Temp</StatTitle>
-        <Stat></Stat>
+        <Stat>{props.average}</Stat>
       </StatsContainer>
     </StatWrapper>
   );
