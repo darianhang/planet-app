@@ -15,6 +15,15 @@ const SectionNavWRapper = styled.div`
     height: 43px;
     z-index: 2;
     background-color: #070724;
+    
+    @media only screen and (min-width: 460px) {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    border: none;
+}
 `
 
 const SectionStyles = styled.div`
@@ -28,36 +37,56 @@ const SectionStyles = styled.div`
     text-align: center;
     justify-content: center;
     padding-top: 3px;
-    height: 40px;
     width: 80px;
+    @media only screen and (min-width: 460px) {
+        font-size: 12px;
+}
+`
+
+const SectionOne = styled(SectionStyles)`
+border-bottom: ${props => props.selected == 1 ? "3px solid #419EBB" : ""};
+opacity: ${props => props.selected == 1 ? "100%" : "50%"};
+@media only screen and (min-width: 460px) {
+    background-color: ${props => props.selected == 1 ? "#419EBB" : ""};
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    height: 48px;
+}
+`
+
+const SectionTwo = styled(SectionStyles)`
+border-bottom: ${props => props.selected == 2 ? "3px solid #419EBB" : ""};
+opacity: ${props => props.selected == 2 ? "100%" : "50%"};
+@media only screen and (min-width: 460px) {
+    background-color: ${props => props.selected == 2 ? "#419EBB" : ""};
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    height: 48px;
+}
+`
+
+const SectionThree = styled(SectionStyles)`
+border-bottom: ${props => props.selected == 3 ? "3px solid #419EBB" : ""};
+opacity: ${props => props.selected == 3 ? "100%" : "50%"};
+@media only screen and (min-width: 460px) {
+    background-color: ${props => props.selected == 3 ? "#419EBB" : ""};
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    height: 48px;
+}
 `
 
 function SectionNavBar(props) {
 
-    const SectionOne = styled(SectionStyles)`
-    border-bottom: ${props.selected == 1 ? "3px solid #419EBB" : ""};
-    opacity: ${props.selected == 1 ? "100%" : "50%"} 
-    `
-
-    const SectionTwo = styled(SectionStyles)`
-    border-bottom: ${props.selected == 2 ? "3px solid #419EBB" : ""};
-    opacity: ${props.selected == 2 ? "100%" : "50%"} 
-    `
-
-    const SectionThree = styled(SectionStyles)`
-    border-bottom: ${props.selected == 3 ? "3px solid #419EBB" : ""};
-    opacity: ${props.selected == 3 ? "100%" : "50%"} 
-    `
-
     return (
         <SectionNavWRapper>
-            <SectionOne onClick={() => {props.setSelected(1)}}>
+            <SectionOne selected={props.selected} onClick={() => { props.setSelected(1) }}>
                 OVERVIEW
             </SectionOne>
-            <SectionTwo onClick={() => props.setSelected(2)}>
+            <SectionTwo selected={props.selected} onClick={() => props.setSelected(2)}>
                 STRUCTURE
             </SectionTwo>
-            <SectionThree onClick={() => props.setSelected(3)}>
+            <SectionThree selected={props.selected} onClick={() => props.setSelected(3)}>
                 SURFACE
             </SectionThree>
         </SectionNavWRapper>

@@ -52,12 +52,21 @@ const NavLinks = styled.div`
 `
 
 const StyledLink = styled(Link)`
+  display: inline-block;
   margin: 0 20px 0 20px;
   font-family: 'League Spartan', sans-serif;
   font-size: 12px;
   text-transform: uppercase;
   text-decoration: none;
+  transition: transform 0.3s ease-out;
+	-webkit-transition: transform 0.3s ease-out;
+    -moz-transition: transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
     color: #fff;
+    &:hover {
+      cursor:pointer;
+      transform: translateY(-2px);
+  }
 `
 
 function NavBar(props) {

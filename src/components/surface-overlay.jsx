@@ -12,11 +12,17 @@ const OverlayContainer = styled.div`
 
 const OverlayImg = styled.img`
     position: absolute;
-    top: 50px;
+    top: -120px;
     left: 0;
     right: 0;
     margin: auto;
-    transform: scale(0.4)
+    transform: scale(0.4);
+    @media only screen and (min-width: 460px) {
+    top: -40px;
+    left: 25%;
+    right: 25%;
+    transform: scale(0.7)
+}
 `
 
 function SurfaceOverlay(props) {
