@@ -45,10 +45,19 @@ opacity: ${props => props.hamStatus ? "30%" : ""};
 `
 
 const NavLinks = styled.div`
-
+  margin-right: 40px;
 @media only screen and (max-width: 460px) {
     display: none;
 }
+`
+
+const StyledLink = styled(Link)`
+  margin: 0 20px 0 20px;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+    color: #fff;
 `
 
 function NavBar(props) {
@@ -61,7 +70,7 @@ function NavBar(props) {
       <NavLinks>
         {SpaceData.map((data) => {
           return (
-            <Link to={data.name}>{data.name}</Link>
+            <StyledLink to={data.name}>{data.name}</StyledLink>
           )
         })}
       </NavLinks>

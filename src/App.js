@@ -36,6 +36,17 @@ function App() {
   filter: ${ openMenu ? "blur(5px)" : ""};
 `
 
+  const InfoWrapper = styled.div`
+  @media only screen and (min-width: 460px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    width: 75%;
+}
+  `
+
   return (
     <AppWrapper className="App">
       <NavBar toggleOpen={ToggleMenu} hamStatus={openMenu}/>
@@ -46,9 +57,11 @@ function App() {
           return (
             <Route path={data.name} element={
             <BodyWrapper>
-              <SurfaceOverlay img={selected == 3 ? data.images.geology : ""}/>
-              <Planet img={selected == 2 ? data.images.internal : data.images.planet }/>
-              <InfoBody source={data.overview.source} name={data.name} body={selected == 1 ? data.overview.content : selected == 2 ? data.structure.content : selected == 3 ? data.geology.content : ""}/>
+              <InfoWrapper>
+                <SurfaceOverlay img={selected == 3 ? data.images.geology : ""}/>
+                <Planet img={selected == 2 ? data.images.internal : data.images.planet }/>
+                <InfoBody source={data.overview.source} name={data.name} body={selected == 1 ? data.overview.content : selected == 2 ? data.structure.content : selected == 3 ? data.geology.content : ""}/>
+              </InfoWrapper>
               <Stats rotation={data.rotation} revolution={data.revolution} radius={data.radius} average={data.temperature}/>
             </BodyWrapper>} />
           )
