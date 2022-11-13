@@ -8,7 +8,7 @@ const StatWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media only screen and (min-width: 460px) {
+  @media only screen and (min-width: 810px) {
     flex-direction: row;
 }
 `
@@ -22,13 +22,17 @@ const StatsContainer = styled.div`
   height: 50px;
   margin: 5px 5px 25px 5px;
   padding: 0 20px 0 20px;
-  @media only screen and (min-width: 460px) {
+  @media only screen and (min-width: 810px) {
     flex-direction: column;
-    width: 180px;
+    width: 255px;
     height: 128px;
     justify-content: center;
     align-items: flex-start;
     margin: 50px 13px 30px 13px;
+}
+
+@media only screen and (min-width:810px) and (max-width:1080px) {
+  width: 180px;
 }
 `
 
@@ -39,7 +43,7 @@ const StatTitle = styled.h2`
   opacity: 50%;
   color: #fff;
   padding-top: 2px;
-  @media only screen and (min-width: 460px) {
+  @media only screen and (min-width: 810px) {
     font-size: 12px;
 }
 `
@@ -48,8 +52,11 @@ const Stat = styled.h3`
   text-transform: uppercase;
   color: #fff;
   padding-bottom: 2.5px;
-  @media only screen and (min-width: 460px) {
+  @media only screen and (min-width: 810px) {
     font-size: 40px;
+}
+@media only screen and (min-width:810px) and (max-width:1080px) {
+  font-size: 28px;
 }
 `
 

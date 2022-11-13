@@ -16,7 +16,7 @@ const SectionNavWRapper = styled.div`
     z-index: 2;
     background-color: #070724;
     
-    @media only screen and (min-width: 460px) {
+    @media only screen and (min-width: 810px) {
     position: static;
     display: flex;
     flex-direction: column;
@@ -38,55 +38,55 @@ const SectionStyles = styled.div`
     justify-content: center;
     padding-top: 3px;
     width: 80px;
-    @media only screen and (min-width: 460px) {
+    @media only screen and (min-width: 810px) {
         font-size: 12px;
 }
 `
 
 const SectionOne = styled(SectionStyles)`
-border-bottom: ${props => props.selected == 1 ? "3px solid #419EBB" : ""};
+border-bottom: ${props => props.selected == 1 ? `3px solid ${props.color}` : ""};
 opacity: ${props => props.selected == 1 ? "100%" : "50%"};
-@media only screen and (min-width: 460px) {
-    background-color: ${props => props.selected == 1 ? "#419EBB" : ""};
+height: 40px;
+@media only screen and (min-width: 810px) {
+    background-color: ${props => props.selected == 1 ? props.color : ""};
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
-    height: 48px;
 }
 `
 
 const SectionTwo = styled(SectionStyles)`
-border-bottom: ${props => props.selected == 2 ? "3px solid #419EBB" : ""};
+border-bottom: ${props => props.selected == 2 ? `3px solid ${props.color}` : ""};
 opacity: ${props => props.selected == 2 ? "100%" : "50%"};
-@media only screen and (min-width: 460px) {
-    background-color: ${props => props.selected == 2 ? "#419EBB" : ""};
+height: 40px;
+@media only screen and (min-width: 810px) {
+    background-color: ${props => props.selected == 2 ? props.color : ""};
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
-    height: 48px;
 }
 `
 
 const SectionThree = styled(SectionStyles)`
-border-bottom: ${props => props.selected == 3 ? "3px solid #419EBB" : ""};
+border-bottom: ${props => props.selected == 3 ? `3px solid ${props.color}` : ""};
 opacity: ${props => props.selected == 3 ? "100%" : "50%"};
-@media only screen and (min-width: 460px) {
-    background-color: ${props => props.selected == 3 ? "#419EBB" : ""};
+height: 40px;
+@media only screen and (min-width: 810px) {
+    background-color: ${props => props.selected == 3 ? props.color : ""};
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
-    height: 48px;
 }
 `
 
 function SectionNavBar(props) {
-
+    console.log(props.selected)
     return (
         <SectionNavWRapper>
-            <SectionOne selected={props.selected} onClick={() => { props.setSelected(1) }}>
+            <SectionOne color={props.color} selected={props.selected} onClick={() => { props.setSelected(1) }}>
                 OVERVIEW
             </SectionOne>
-            <SectionTwo selected={props.selected} onClick={() => props.setSelected(2)}>
+            <SectionTwo color={props.color} selected={props.selected} onClick={() => props.setSelected(2)}>
                 STRUCTURE
             </SectionTwo>
-            <SectionThree selected={props.selected} onClick={() => props.setSelected(3)}>
+            <SectionThree color={props.color} selected={props.selected} onClick={() => props.setSelected(3)}>
                 SURFACE
             </SectionThree>
         </SectionNavWRapper>

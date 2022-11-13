@@ -38,7 +38,7 @@ width: 24px;
 
 opacity: ${props => props.hamStatus ? "30%" : ""};
 
-@media only screen and (min-width: 460px) {
+@media only screen and (min-width: 810px) {
   display: none;
 }
 
@@ -46,7 +46,7 @@ opacity: ${props => props.hamStatus ? "30%" : ""};
 
 const NavLinks = styled.div`
   margin-right: 40px;
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 810px) {
     display: none;
 }
 `

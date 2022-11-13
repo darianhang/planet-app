@@ -17,7 +17,7 @@ const OverlayImg = styled.img`
     right: 0;
     margin: auto;
     transform: scale(0.4);
-    @media only screen and (min-width: 460px) {
+    @media only screen and (min-width: 810px) {
     top: -40px;
     left: 25%;
     right: 25%;

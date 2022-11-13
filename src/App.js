@@ -19,7 +19,7 @@ const AppWrapper = styled.div`
 function App() {
 
   const windowSize = useWindowSize()
-  const mobile = windowSize.width > 460 ? true : false
+  const mobile = windowSize.width > 810 ? true : false
   const [selected, setSelected] = React.useState(1)
   const [openMenu, setOpenMenu] = React.useState(false)
 
@@ -41,7 +41,7 @@ function App() {
 `
 
   const InfoWrapper = styled.div`
-  @media only screen and (min-width: 460px) {
+  @media only screen and (min-width: 810px) {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -55,15 +55,16 @@ function App() {
     <AppWrapper className="App">
       <NavBar toggleOpen={ToggleMenu} hamStatus={openMenu}/>
       <NavMenu toggleOpen={openMenu} setOpen={ToggleMenu} resetSelected={resetSelect}/>
-      {windowSize.width < 460 ? <SectionNavBar selected={selected} setSelected={setSelected}/> : ""}
       <Routes>
         {SpaceData.map((data) => {
           return (
             <Route path={data.name} element={
             <BodyWrapper>
+            {windowSize.width < 810 ? <SectionNavBar color={data.color} selected={selected} setSelected={setSelected}/> : ""}
+            {windowSize.width > 810 && windowSize.width < 1060 ? <Planet selected={selected} data={data} img={selected == 2 ? data.images.internal : data.images.planet }/> : ""}
               <InfoWrapper>
-                <Planet selected={selected} data={data} img={selected == 2 ? data.images.internal : data.images.planet }/>
-                <InfoBody mobile={mobile} selected={selected} setSelected={setSelected} source={data.overview.source} name={data.name} body={selected == 1 ? data.overview.content : selected == 2 ? data.structure.content : selected == 3 ? data.geology.content : ""}/>
+                {windowSize.width > 810 && windowSize.width < 1060 ? "" : <Planet selected={selected} data={data} img={selected == 2 ? data.images.internal : data.images.planet }/>}
+                <InfoBody color={data.color} mobile={mobile} selected={selected} setSelected={setSelected} source={data.overview.source} name={data.name} body={selected == 1 ? data.overview.content : selected == 2 ? data.structure.content : selected == 3 ? data.geology.content : ""}/>
               </InfoWrapper>
               <Stats mobile={mobile} rotation={data.rotation} revolution={data.revolution} radius={data.radius} average={data.temperature}/>
             </BodyWrapper>} />

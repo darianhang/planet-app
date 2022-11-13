@@ -11,15 +11,20 @@ const PlanetContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: 360px;
-    @media only screen and (min-width: 460px) {
+    @media only screen and (min-width: 810px) {
         margin: 0;
         width: 25%;
 }
+
+@media only screen and (min-width:810px) and (max-width:1080px) {
+    margin: 5% auto auto auto;
+}
+
 `
 
 const PlanetImg = styled.img`
     transform: scale(0.5);
-    @media only screen and (min-width: 460px) {
+    @media only screen and (min-width: 810px) {
         transform: scale(0.8)
 `
 
