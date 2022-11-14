@@ -21,7 +21,10 @@ const OverlayImg = styled.img`
     top: -40px;
     left: 25%;
     right: 25%;
-    transform: scale(0.7)
+    transform: scale(0.7);
+    @media only screen and (min-width:810px) and (max-width:1080px) {
+        transform: scale(0.5);
+}
 }
 `
 

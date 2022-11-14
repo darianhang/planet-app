@@ -32,12 +32,17 @@ function App() {
   }
 
   const BodyWrapper = styled.div`
-  padding-top: 115px;
+    padding-top: 60px;
   -webkit-filter: ${ openMenu ? "blur(5px)" : ""};
   -moz-filter: ${ openMenu ? "blur(5px)" : ""};
   -o-filter: ${ openMenu ? "blur(5px)" : ""};
   -ms-filter: ${ openMenu ? "blur(5px)" : ""};
   filter: ${ openMenu ? "blur(5px)" : ""};
+  @media only screen and (max-width:1080px) {
+    margin: 2% auto auto auto;
+    padding-top: 115px;
+}
+
 `
 
   const InfoWrapper = styled.div`

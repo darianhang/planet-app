@@ -17,7 +17,7 @@ const PlanetContainer = styled.div`
 }
 
 @media only screen and (min-width:810px) and (max-width:1080px) {
-    margin: 5% auto auto auto;
+    margin: 2% auto auto auto;
 }
 
 `
